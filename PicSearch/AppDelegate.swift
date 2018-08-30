@@ -18,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch userActivity.activityType {
             case "com.rarcher.PicSearch.showPic":
                 viewController.showPic()
-            case "ShowPictureOfIntent":
-                let intent = userActivity.interaction?.intent as! ShowPictureOfIntent
-                print("Will show image of \(intent.imageType!)")
-                viewController.showPicOf(imageType: intent.imageType!)
             default:
                 return false
         }

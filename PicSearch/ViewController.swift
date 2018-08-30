@@ -39,19 +39,6 @@ class ViewController: UIViewController {
         userActivity = activity
     }
     
-    func donatePictureOfIntent(imageType: String) {
-        let pictureOfIntent = ShowPictureOfIntent()
-        pictureOfIntent.setImage(INImage(named: "Zebra"), forParameterNamed: \.imageType)  // Image shown on shortcut
-        pictureOfIntent.imageType = imageType  // Image we actually display in the app
-        
-        let interaction = INInteraction(intent: pictureOfIntent, response: nil)
-        interaction.donate { error in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
     public func showPic() {
         imageView.image = UIImage(named: _imageNames[_imageIndex])
         
@@ -59,19 +46,6 @@ class ViewController: UIViewController {
         else { _imageIndex += 1 }
         
         donateShortcut()
-    }
-    
-    public func showPicOf(imageType: String) {
-        imageView.image = UIImage(named: imageType)
-        donatePictureOfIntent(imageType: imageType)
-    }
-    
-    @IBAction func showPictureTapped(_ sender: Any) {
-        showPic()
-    }
-    
-    @IBAction func showPictureOfTapped(_ sender: Any) {
-        showPicOf(imageType: "Zebra")
     }
 }
 

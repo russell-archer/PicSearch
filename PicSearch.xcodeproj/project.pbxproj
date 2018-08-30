@@ -13,7 +13,6 @@
 		68594D2D212DB3EB00A76FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68594D2C212DB3EB00A76FFB /* Assets.xcassets */; };
 		68594D30212DB3EB00A76FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68594D2E212DB3EB00A76FFB /* LaunchScreen.storyboard */; };
 		68594D3A212DF43B00A76FFB /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68594D39212DF43B00A76FFB /* Intents.framework */; };
-		68D4FD1221346F020003A9F2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 68D4FD1121346F020003A9F2 /* Intents.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		68594D31212DB3EB00A76FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68594D37212DEC3700A76FFB /* PicSearch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PicSearch.entitlements; sourceTree = "<group>"; };
 		68594D39212DF43B00A76FFB /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		68D4FD1121346F020003A9F2 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +61,6 @@
 			children = (
 				68594D37212DEC3700A76FFB /* PicSearch.entitlements */,
 				68594D25212DB3EA00A76FFB /* AppDelegate.swift */,
-				68D4FD1121346F020003A9F2 /* Intents.intentdefinition */,
 				68594D27212DB3EA00A76FFB /* ViewController.swift */,
 				68594D29212DB3EA00A76FFB /* Main.storyboard */,
 				68594D2C212DB3EB00A76FFB /* Assets.xcassets */,
@@ -157,7 +154,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68D4FD1221346F020003A9F2 /* Intents.intentdefinition in Sources */,
 				68594D28212DB3EA00A76FFB /* ViewController.swift in Sources */,
 				68594D26212DB3EA00A76FFB /* AppDelegate.swift in Sources */,
 			);

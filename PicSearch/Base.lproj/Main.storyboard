@@ -21,7 +21,7 @@
                                 <rect key="frame" x="16" y="58" width="343" height="589"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkL-60-abb">
-                                <rect key="frame" x="16" y="20" width="91" height="30"/>
+                                <rect key="frame" x="16" y="20" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="j2W-nG-bAx"/>
                                 </constraints>
@@ -30,30 +30,17 @@
                                     <action selector="showPictureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ko-Nu-KnB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgp-Np-7da">
-                                <rect key="frame" x="248" y="20" width="111" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Fak-Rd-alD"/>
-                                </constraints>
-                                <state key="normal" title="Show Picture Of"/>
-                                <connections>
-                                    <action selector="showPictureOfTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZw-K6-Trb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sky-Ri-26R" firstAttribute="top" secondItem="hkL-60-abb" secondAttribute="bottom" constant="8" id="23L-3F-3jX"/>
-                            <constraint firstItem="sky-Ri-26R" firstAttribute="top" secondItem="hkL-60-abb" secondAttribute="bottom" constant="8" id="4Fi-k5-3af"/>
-                            <constraint firstItem="hkL-60-abb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5hJ-vV-DNm"/>
-                            <constraint firstItem="Xgp-Np-7da" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8yB-MY-Uk2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xgp-Np-7da" secondAttribute="trailing" constant="16" id="TXF-5t-Kqp"/>
-                            <constraint firstItem="sky-Ri-26R" firstAttribute="top" secondItem="Xgp-Np-7da" secondAttribute="bottom" constant="8" id="dXS-j1-B24"/>
-                            <constraint firstItem="sky-Ri-26R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fMq-c9-aPG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sky-Ri-26R" secondAttribute="trailing" constant="16" id="fZX-ig-Efl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sky-Ri-26R" secondAttribute="bottom" constant="20" id="mnP-3a-ztp"/>
-                            <constraint firstItem="hkL-60-abb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qqU-HU-6Op"/>
-                            <constraint firstItem="Xgp-Np-7da" firstAttribute="leading" secondItem="hkL-60-abb" secondAttribute="trailing" constant="141" id="vt6-fv-g1i"/>
+                            <constraint firstItem="sky-Ri-26R" firstAttribute="top" secondItem="hkL-60-abb" secondAttribute="bottom" constant="8" id="2AU-zk-2Ur"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sky-Ri-26R" secondAttribute="bottom" constant="20" id="4sd-sL-CCu"/>
+                            <constraint firstItem="hkL-60-abb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SNd-Nr-ndb"/>
+                            <constraint firstItem="hkL-60-abb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XKq-gd-Y4e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hkL-60-abb" secondAttribute="trailing" constant="16" id="Zpp-EL-hAH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sky-Ri-26R" secondAttribute="trailing" constant="16" id="sTb-gv-tls"/>
+                            <constraint firstItem="sky-Ri-26R" firstAttribute="top" secondItem="hkL-60-abb" secondAttribute="bottom" constant="8" id="xSH-Eh-joI"/>
+                            <constraint firstItem="sky-Ri-26R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zUK-Xt-RLr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
