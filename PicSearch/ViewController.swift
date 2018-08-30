@@ -7,14 +7,71 @@
 //
 
 import UIKit
+import Intents
+import CoreSpotlight
+import CoreServices
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var imageView: UIImageView!
+    
+    fileprivate let _imageNames = ["Owl", "Parrot", "Penguin"]
+    fileprivate var _imageIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
+    func donateShortcut() {
+        // Search attributes
+        let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
+        attributes.contentDescription = "See the pretty picture!"
+        attributes.thumbnailData = UIImage(named: "OwlSmall")?.pngData()  // This doesn't seem to work for some reason
 
+        let activity = NSUserActivity(activityType: "com.rarcher.PicSearch.showPic")
+        activity.title = "Show Pic"                         // The shortcut's title
+        activity.userInfo = ["key" : "value"]               // Dictionary of additional user data as key/value pairs
+        activity.isEligibleForSearch = true                 // If true shortcut is shown in search view
+        activity.isEligibleForPrediction = true             // Siri can suggest the shortcut to the user (reqs isEligibleForSearch to be true)
+        activity.isEligibleForHandoff = true                // The shortcut is available on all my devices
+        activity.suggestedInvocationPhrase = "Show Picture" // Text suggested to the user when they create a shortcut
+        activity.contentAttributeSet = attributes           // Add the search attributes
+
+        userActivity = activity
+    }
+    
+    func donatePictureOfIntent(imageType: String) {
+        let pictureOfIntent = ShowPictureOfIntent()
+        pictureOfIntent.setImage(INImage(named: "Zebra"), forParameterNamed: \.imageType)  // Image shown on shortcut
+        pictureOfIntent.imageType = imageType  // Image we actually display in the app
+        
+        let interaction = INInteraction(intent: pictureOfIntent, response: nil)
+        interaction.donate { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    public func showPic() {
+        imageView.image = UIImage(named: _imageNames[_imageIndex])
+        
+        if _imageIndex == 2 { _imageIndex = 0 }
+        else { _imageIndex += 1 }
+        
+        donateShortcut()
+    }
+    
+    public func showPicOf(imageType: String) {
+        imageView.image = UIImage(named: imageType)
+        donatePictureOfIntent(imageType: imageType)
+    }
+    
+    @IBAction func showPictureTapped(_ sender: Any) {
+        showPic()
+    }
+    
+    @IBAction func showPictureOfTapped(_ sender: Any) {
+        showPicOf(imageType: "Zebra")
+    }
 }
 

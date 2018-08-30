@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,58 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PicSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sky-Ri-26R">
+                                <rect key="frame" x="16" y="58" width="343" height="589"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkL-60-abb">
+                                <rect key="frame" x="16" y="20" width="91" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="j2W-nG-bAx"/>
+                                </constraints>
+                                <state key="normal" title="Show Picture"/>
+                                <connections>
+                                    <action selector="showPictureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ko-Nu-KnB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgp-Np-7da">
+                                <rect key="frame" x="248" y="20" width="111" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Fak-Rd-alD"/>
+                                </constraints>
+                                <state key="normal" title="Show Picture Of"/>
+                                <connections>
+                                    <action selector="showPictureOfTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZw-K6-Trb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sky-Ri-26R" firstAttribute="top" secondItem="hkL-60-abb" secondAttribute="bottom" constant="8" id="23L-3F-3jX"/>
+                            <constraint firstItem="sky-Ri-26R" firstAttribute="top" secondItem="hkL-60-abb" secondAttribute="bottom" constant="8" id="4Fi-k5-3af"/>
+                            <constraint firstItem="hkL-60-abb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5hJ-vV-DNm"/>
+                            <constraint firstItem="Xgp-Np-7da" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8yB-MY-Uk2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xgp-Np-7da" secondAttribute="trailing" constant="16" id="TXF-5t-Kqp"/>
+                            <constraint firstItem="sky-Ri-26R" firstAttribute="top" secondItem="Xgp-Np-7da" secondAttribute="bottom" constant="8" id="dXS-j1-B24"/>
+                            <constraint firstItem="sky-Ri-26R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fMq-c9-aPG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sky-Ri-26R" secondAttribute="trailing" constant="16" id="fZX-ig-Efl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sky-Ri-26R" secondAttribute="bottom" constant="20" id="mnP-3a-ztp"/>
+                            <constraint firstItem="hkL-60-abb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qqU-HU-6Op"/>
+                            <constraint firstItem="Xgp-Np-7da" firstAttribute="leading" secondItem="hkL-60-abb" secondAttribute="trailing" constant="141" id="vt6-fv-g1i"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="sky-Ri-26R" id="cZM-YG-tQ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
