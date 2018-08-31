@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         // Search attributes
         let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
         attributes.contentDescription = "See the pretty picture!"
-        attributes.thumbnailData = UIImage(named: "OwlSmall")?.pngData()  // This doesn't seem to work for some reason
+        attributes.thumbnailData = UIImage(named: "Owl")?.pngData()  // This doesn't seem to work for some reason in iOS 12 betas
 
         let activity = NSUserActivity(activityType: "com.rarcher.PicSearch.showPic")
         activity.title = "Show Pic"                         // The shortcut's title
@@ -42,10 +42,15 @@ class ViewController: UIViewController {
     public func showPic() {
         imageView.image = UIImage(named: _imageNames[_imageIndex])
         
+        // We rotate between three example images
         if _imageIndex == 2 { _imageIndex = 0 }
         else { _imageIndex += 1 }
         
         donateShortcut()
+    }
+    
+    @IBAction func showPictureTapped(_ sender: Any) {
+        showPic()
     }
 }
 

@@ -15,11 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         let viewController = window?.rootViewController as! ViewController
         
-        switch userActivity.activityType {
-            case "com.rarcher.PicSearch.showPic":
-                viewController.showPic()
-            default:
-                return false
+        if userActivity.activityType == "com.rarcher.PicSearch.showPic" {
+            viewController.showPic()
         }
         
         return true

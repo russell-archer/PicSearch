@@ -27,7 +27,7 @@
                                 </constraints>
                                 <state key="normal" title="Show Picture"/>
                                 <connections>
-                                    <action selector="showPictureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ko-Nu-KnB"/>
+                                    <action selector="showPictureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ubM-HU-b45"/>
                                 </connections>
                             </button>
                         </subviews>
